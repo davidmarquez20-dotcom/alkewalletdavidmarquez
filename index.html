@@ -1,11 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Alke Wallet - Billetera Digital</title>
 </head>
+
 <body>
-    
+  <!-- Navbar Top -->
+  <nav class="navbar-top">
+    <div class="container">
+      <div class="logo-nav">
+        <span class="alke-logo">Ⓐ</span> Alke Wallet
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <div class="logo-main">Ⓐ</div>
+      <h1>Alke Wallet</h1>
+      <p>Tu billetera digital segura y confiable • v2.0</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Quick Access -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="section-title"><i class="fas fa-rocket"></i> Comienza Aquí</h4>
+        <a href="login.html" class="btn btn-primary btn-nav btn-block">
+          <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+        </a>
+        <a href="setup.html" class="btn btn-secondary btn-nav btn-block">
+          <i class="fas fa-database"></i> Cargar Datos de Prueba
+        </a>
+        <p class="text-muted small mt-3">
+          <i class="fas fa-info-circle"></i> Credenciales de prueba:
+          <strong>admin@alkewallet.com</strong> / <strong>12345</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="section-title"><i class="fas fa-star"></i> Funcionalidades</h4>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-sign-in-alt fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-2 text-dark-custom">Autenticación Segura</h6>
+                <small class="text-muted">Inicio de sesión con credenciales validadas</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-plus-circle fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-2 text-dark-custom">Depósitos</h6>
+                <small class="text-muted">Simula depósitos y gestiona tu saldo</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-exchange-alt fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-2 text-dark-custom">Transferencias</h6>
+                <small class="text-muted">Envía dinero con validación de CBU</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-history fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-2 text-dark-custom">Historial</h6>
+                <small class="text-muted">Consulta todas tus transacciones</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requirements -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="section-title"><i class="fas fa-check-circle"></i> Requisitos Implementados</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Registro e inicio de sesión seguro</li>
+              <li><i class="fas fa-check"></i> Administración de fondos y saldo</li>
+              <li><i class="fas fa-check"></i> Depósitos y retiros simulados</li>
+              <li><i class="fas fa-check"></i> Envío de fondos con validación</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="feature-list">
+              <li><i class="fas fa-check"></i> Historial completo de transacciones</li>
+              <li><i class="fas fa-check"></i> Gestión de contactos</li>
+              <li><i class="fas fa-check"></i> Filtrado y estadísticas</li>
+              <li><i class="fas fa-check"></i> Diseño 100% responsive</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="section-title"><i class="fas fa-code"></i> Stack Tecnológico</h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card card-feat">
+              <div class="card-body">
+                <h6 class="font-weight-bold mb-3 text-dark-custom">Frontend</h6>
+                <ul class="small" >
+                  <li><i class="fas fa-check text-primary"></i> HTML5 Semántico</li>
+                  <li><i class="fas fa-check text-primary"></i> CSS3 Responsive</li>
+                  <li><i class="fas fa-check text-primary"></i> JavaScript ES6+</li>
+                  <li><i class="fas fa-check text-primary"></i> jQuery 3.x</li>
+                  <li><i class="fas fa-check text-primary"></i> Bootstrap 4.5</li>
+                  <li><i class="fas fa-check text-primary"></i> Font Awesome 6.0</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card card-feat">
+              <div class="card-body">
+                <h6 class="font-weight-bold mb-3 text-dark-custom">Características</h6>
+                <ul class="small" >
+                  <li><i class="fas fa-check text-success"></i> LocalStorage API</li>
+                  <li><i class="fas fa-check text-success"></i> Validación completa</li>
+                  <li><i class="fas fa-check text-success"></i> Gestión de sesión</li>
+                  <li><i class="fas fa-check text-success"></i> Persistencia de datos</li>
+                  <li><i class="fas fa-check text-success"></i> Interfaz intuitiva</li>
+                  <li><i class="fas fa-check text-success"></i> 100% Cliente (sin backend)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Info -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="section-title"><i class="fas fa-info-circle"></i> Acerca de este Proyecto</h4>
+        <div class="card card-feat">
+          <div class="card-body">
+            <p class="text-dark-custom" >
+              <strong>Alke Wallet</strong> es una aplicación de billetera digital desarrollada como proyecto de evaluación integradora.
+              El objetivo es proporcionar a los usuarios una solución confiable y fácil de usar para administrar sus activos financieros de manera segura y conveniente.
+            </p>
+            <hr>
+            <p class="mb-0 text-muted small">
+              <strong>Características principales:</strong> Autenticación segura, gestión de fondos, transferencias validadas, historial de transacciones y contactos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <p class="text-center text-muted small">
+      <strong>Alke Wallet</strong> v2.0 • Billetera Digital Moderna • Bootstrap + jQuery + LocalStorage
+    </p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
