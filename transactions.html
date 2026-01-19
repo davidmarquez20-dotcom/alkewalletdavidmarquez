@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Últimos Movimientos - Alke Wallet</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-custom">
+    <div class="container">
+      <a href="menu.html" class="navbar-brand mb-0 h1">
+        <i class="fas fa-arrow-left"></i> Volver
+      </a>
+      <span class="navbar-brand mb-0 h1">Últimos Movimientos</span>
+      <div></div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <!-- Filter Section -->
+        <div class="card mb-4 shadow">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold mb-3">
+              <i class="fas fa-filter"></i> Filtrar Movimientos
+            </h5>
+            <div class="row">
+              <div class="col-md-6">
+                <select id="filterType" class="form-control">
+                  <option value="">Todos los movimientos</option>
+                  <option value="Depósito">Depósito</option>
+                  <option value="Transferencia Enviada">Transferencia Enviada</option>
+                  <option value="Transferencia Recibida">Transferencia Recibida</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <button id="clearFilterBtn" class="btn btn-outline-secondary w-100">
+                  <i class="fas fa-redo"></i> Limpiar Filtros
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistics Card -->
+        <div class="row mb-4">
+          <div class="col-md-4">
+            <div class="card bg-info text-white">
+              <div class="card-body text-center">
+                <h6 class="card-title">Ingresos</h6>
+                <h4 id="incomingTotal">$0.00</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-danger text-white">
+              <div class="card-body text-center">
+                <h6 class="card-title">Egresos</h6>
+                <h4 id="outgoingTotal">$0.00</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-success text-white">
+              <div class="card-body text-center">
+                <h6 class="card-title">Total Transacciones</h6>
+                <h4 id="totalTransactions">0</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transactions List -->
+        <div id="transactionsList" class="transactions-list">
+          <!-- Transactions will be loaded here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="alert alert-info text-center">
+          <i class="fas fa-inbox fa-3x mb-3 d-block"></i>
+          <h5>No hay movimientos registrados</h5>
+          <p class="mb-0">Realiza tu primer depósito o transferencia para ver tu historial aquí.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
