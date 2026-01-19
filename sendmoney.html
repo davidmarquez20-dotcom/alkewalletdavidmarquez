@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Enviar Dinero - Alke Wallet</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-custom">
+    <div class="container">
+      <a href="menu.html" class="navbar-brand mb-0 h1">
+        <i class="fas fa-arrow-left"></i> Volver
+      </a>
+      <span class="navbar-brand mb-0 h1">Enviar Dinero</span>
+      <div></div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <!-- Alert Container -->
+        <div id="alert-container" class="mb-4"></div>
+
+        <!-- Current Balance -->
+        <div class="card mb-4 bg-light">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">
+              <i class="fas fa-coins text-warning"></i> Saldo Disponible
+            </h5>
+            <h3 class="text-warning" id="currentBalance">$0.00</h3>
+          </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs mb-4" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#existing-contacts">
+              <i class="fas fa-address-book"></i> Contactos Guardados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#add-contact">
+              <i class="fas fa-user-plus"></i> Agregar Contacto
+            </a>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <!-- Existing Contacts Tab -->
+          <div id="existing-contacts" class="tab-pane fade show active">
+            <!-- Search Form -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                  </div>
+                  <input 
+                    type="text" 
+                    id="searchContact" 
+                    class="form-control" 
+                    placeholder="Buscar por nombre o alias..."
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Contacts List -->
+            <div id="contactsList" class="contact-list">
+              <!-- Contacts will be loaded here dynamically -->
+            </div>
+
+            <!-- No contacts message -->
+            <div id="noContactsMsg" class="alert alert-info text-center">
+              <i class="fas fa-info-circle"></i> No tienes contactos guardados aún.
+              <br>
+              <small>Agrega tu primer contacto desde la pestaña "Agregar Contacto"</small>
+            </div>
+          </div>
+
+          <!-- Add Contact Tab -->
+          <div id="add-contact" class="tab-pane fade">
+            <div class="card shadow">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-user-plus"></i> Agregar Nuevo Contacto</h5>
+              </div>
+              <div class="card-body">
+                <form id="addContactForm" novalidate>
+                  <div class="form-group">
+                    <label for="contactName" class="font-weight-bold">Nombre del Contacto:</label>
+                    <input 
+                      type="text" 
+                      id="contactName" 
+                      class="form-control" 
+                      placeholder="Ej: Juan Pérez" 
+                      required
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactAlias" class="font-weight-bold">Alias (opcional):</label>
+                    <input 
+                      type="text" 
+                      id="contactAlias" 
+                      class="form-control" 
+                      placeholder="Ej: Mi hermano"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactCBU" class="font-weight-bold">Número CBU:</label>
+                    <input 
+                      type="text" 
+                      id="contactCBU" 
+                      class="form-control" 
+                      placeholder="Ej: 0170068" 
+                      pattern="[0-9]{7}"
+                      maxlength="7"
+                      required
+                    >
+                    <small class="form-text text-muted">Debe ser de 7 dígitos</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactEmail" class="font-weight-bold">Email (opcional):</label>
+                    <input 
+                      type="email" 
+                      id="contactEmail" 
+                      class="form-control" 
+                      placeholder="Ej: juan@ejemplo.com"
+                    >
+                  </div>
+
+                  <button type="submit" class="btn btn-success btn-block font-weight-bold">
+                    <i class="fas fa-check-circle"></i> Guardar Contacto
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-block font-weight-bold mt-2" data-dismiss="modal">
+                    <i class="fas fa-times-circle"></i> Cancelar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Send Money Form (appears when contact is selected) -->
+        <div id="sendMoneyForm" class="card shadow mt-4 form-hidden">
+          <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="fas fa-money-bill-wave"></i> Confirmar Transferencia</h5>
+          </div>
+          <div class="card-body">
+            <div class="alert alert-info">
+              <strong>Destinatario:</strong> <span id="selectedContactName"></span> <br>
+              <strong>CBU:</strong> <span id="selectedContactCBU" class="font-monospace"></span>
+            </div>
+
+            <form id="sendMoneyFormSubmit">
+              <div class="form-group">
+                <label for="sendAmount" class="font-weight-bold">Monto a Enviar ($):</label>
+                <div class="input-group input-group-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                  </div>
+                  <input 
+                    type="number" 
+                    id="sendAmount" 
+                    class="form-control" 
+                    placeholder="0.00" 
+                    step="0.01" 
+                    min="0.01"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sendDescription" class="font-weight-bold">Descripción (opcional):</label>
+                <textarea 
+                  id="sendDescription" 
+                  class="form-control" 
+                  rows="3" 
+                  placeholder="Ej: Pago de cena"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg btn-block font-weight-bold">
+                <i class="fas fa-paper-plane"></i> Enviar Dinero
+              </button>
+              <button type="button" class="btn btn-secondary btn-lg btn-block font-weight-bold mt-2" id="cancelSendBtn">
+                <i class="fas fa-times-circle"></i> Cancelar
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Confirmation Message -->
+        <div id="confirmationMessage" class="card border-success mb-4 form-hidden">
+          <div class="card-body text-center">
+            <h5 class="card-title text-success font-weight-bold">
+              <i class="fas fa-check-circle fa-2x text-success mb-3 d-block"></i>
+              Transferencia Realizada Exitosamente
+            </h5>
+            <p class="mb-1">Se ha transferido:</p>
+            <h4 class="text-success font-weight-bold" id="sentAmount">$0.00</h4>
+            <p class="text-muted small mt-3">a <strong id="sentToName"></strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
