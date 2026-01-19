@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Depósito - Alke Wallet</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-custom">
+    <div class="container">
+      <a href="menu.html" class="navbar-brand mb-0 h1">
+        <i class="fas fa-arrow-left"></i> Volver
+      </a>
+      <span class="navbar-brand mb-0 h1">Realizar Depósito</span>
+      <div></div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <!-- Alert Container -->
+        <div id="alert-container" class="mb-4"></div>
+
+        <!-- Current Balance -->
+        <div class="card mb-4 bg-light">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">
+              <i class="fas fa-coins text-success"></i> Saldo Actual
+            </h5>
+            <h3 class="text-success" id="currentBalance">$0.00</h3>
+          </div>
+        </div>
+
+        <!-- Deposit Form -->
+        <div class="card shadow mb-4">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-plus-circle"></i> Formulario de Depósito</h5>
+          </div>
+          <div class="card-body">
+            <form id="depositForm" novalidate>
+              <div class="form-group">
+                <label for="depositAmount" class="font-weight-bold">Monto a Depositar ($):</label>
+                <div class="input-group input-group-lg">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                  </div>
+                  <input 
+                    type="number" 
+                    id="depositAmount" 
+                    class="form-control" 
+                    placeholder="0.00" 
+                    step="0.01" 
+                    min="0.01"
+                    required
+                  >
+                </div>
+                <small class="form-text text-muted">Ingresa un monto mayor a $0.00</small>
+              </div>
+
+              <div class="form-group">
+                <label for="depositMethod" class="font-weight-bold">Método de Depósito:</label>
+                <select id="depositMethod" class="form-control" required>
+                  <option value="">Selecciona un método...</option>
+                  <option value="bank-transfer">Transferencia Bancaria</option>
+                  <option value="credit-card">Tarjeta de Crédito</option>
+                  <option value="debit-card">Tarjeta de Débito</option>
+                  <option value="cash">Efectivo en Punto de Pago</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg btn-block font-weight-bold">
+                <i class="fas fa-check-circle"></i> Confirmar Depósito
+              </button>
+              <a href="menu.html" class="btn btn-secondary btn-lg btn-block font-weight-bold mt-2">
+                <i class="fas fa-times-circle"></i> Cancelar
+              </a>
+            </form>
+          </div>
+        </div>
+
+        <!-- Deposit Confirmation Legend -->
+        <div id="depositLegend" class="card border-success mb-4 form-hidden">
+          <div class="card-body text-center">
+            <h5 class="card-title text-success font-weight-bold">
+              <i class="fas fa-check-circle fa-2x text-success mb-3 d-block"></i>
+              Depósito Realizado Exitosamente
+            </h5>
+            <p class="mb-1">Monto Depositado:</p>
+            <h4 class="text-success font-weight-bold" id="depositedAmount">$0.00</h4>
+            <p class="text-muted small mt-3">Nuevo Saldo: <strong id="newBalance">$0.00</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
