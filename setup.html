@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Cargar Datos - Alke Wallet</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-custom">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">
+        <span class="alke-logo">Ⓐ</span> Alke Wallet - Datos de Prueba
+      </span>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <div class="card shadow">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-database"></i> Gestor de Datos</h5>
+          </div>
+          <div class="card-body">
+            <p class="text-muted mb-4">
+              <i class="fas fa-info-circle"></i> Utiliza los botones a continuación para cargar datos de prueba en la aplicación.
+            </p>
+
+            <div class="btn-group d-flex flex-wrap gap-2 mb-4" role="group">
+              <button type="button" class="btn btn-success" onclick="loadSampleBalance()">
+                <i class="fas fa-dollar-sign"></i> Cargar Saldo
+              </button>
+              <button type="button" class="btn btn-info" onclick="loadSampleContacts()">
+                <i class="fas fa-address-book"></i> Cargar Contactos
+              </button>
+              <button type="button" class="btn btn-warning text-dark" onclick="loadSampleTransactions()">
+                <i class="fas fa-exchange-alt"></i> Cargar Transacciones
+              </button>
+              <button type="button" class="btn btn-primary" onclick="loadAllSampleData()">
+                <i class="fas fa-magic"></i> Cargar Todo
+              </button>
+              <button type="button" class="btn btn-danger" onclick="clearAllData()">
+                <i class="fas fa-trash"></i> Limpiar Todo
+              </button>
+            </div>
+
+            <hr>
+
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-eye"></i> Estado Actual de Datos</h6>
+            <pre id="dataDisplay" class="bg-light p-3 rounded"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script>
+    // Mostrar datos al cargar la página
+    window.addEventListener('load', displayCurrentData);
+  </script>
+</body>
+
+</html>
