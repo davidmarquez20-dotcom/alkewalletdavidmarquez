@@ -179,7 +179,7 @@ function setupLoginForm() {
     }
 
     // Verificar credenciales
-    if (email === 'admin@micartera.com' && password === '12345') {
+    if (email === 'admin@alkewallet.com' && password === '12345') {
       // Guardar usuario en sesión
       localStorage.setItem('loggedInUser', 'admin');
 
