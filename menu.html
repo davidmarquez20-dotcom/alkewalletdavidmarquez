@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Menú Principal - Alke Wallet</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-custom">
+    <div class="container">
+      <span class="navbar-brand mb-0 h1">
+        <span class="alke-logo">Ⓐ</span> Alke Wallet
+      </span>
+      <button id="logoutBtn" class="btn btn-outline-light btn-sm">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+      </button>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <div class="card bg-primary text-white shadow">
+          <div class="card-body">
+            <h5 class="card-title">Saldo Disponible</h5>
+            <h2 class="display-4" id="balanceDisplay">$0.00</h2>
+            <small>Última actualización: <span id="lastUpdate">Ahora</span></small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alert Container -->
+    <div id="alert-container" class="mb-4"></div>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <button class="btn btn-menu btn-deposit w-100" id="depositBtn" data-action="deposit">
+          <div class="menu-icon">
+            <i class="fas fa-plus-circle fa-2x"></i>
+          </div>
+          <div class="menu-text">
+            <h5>Depositar</h5>
+            <p>Agregar dinero a tu cuenta</p>
+          </div>
+        </button>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <button class="btn btn-menu btn-send w-100" id="sendBtn" data-action="send">
+          <div class="menu-icon">
+            <i class="fas fa-arrow-right-arrow-left fa-2x"></i>
+          </div>
+          <div class="menu-text">
+            <h5>Enviar Dinero</h5>
+            <p>Transferir a otros usuarios</p>
+          </div>
+        </button>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <button class="btn btn-menu btn-transactions w-100" id="transactionsBtn" data-action="transactions">
+          <div class="menu-icon">
+            <i class="fas fa-history fa-2x"></i>
+          </div>
+          <div class="menu-text">
+            <h5>Últimos Movimientos</h5>
+            <p>Ver historial de transacciones</p>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading Toast -->
+    <div id="loadingToast" class="position-fixed">
+      <div class="toast show" role="alert">
+        <div class="toast-body bg-info text-white">
+          <i class="fas fa-spinner fa-spin"></i> <span id="toastMessage"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
