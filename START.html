@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Mi Billetera Digital</title>
+  <style>
+    body { background: #f8f9fa; }
+    .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; }
+    .hero p { margin: 0; font-size: 1.1em; opacity: 0.9; }
+    .card-feat { border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s; }
+    .card-feat:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(102,126,234,0.2); }
+    .card-feat .fa-2x { color: #667eea; margin-bottom: 15px; }
+    .btn-nav { padding: 12px; font-weight: 600; border-radius: 8px; margin-bottom: 10px; }
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { padding: 8px 0; border-bottom: 1px solid #e9ecef; }
+    .feature-list li:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <h1><i class="fas fa-wallet"></i> Mi Billetera Digital</h1>
+      <p>Gestión de finanzas personales • v1.0</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <!-- Acceso Rápido -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="mb-3 font-weight-bold"><i class="fas fa-rocket"></i> Comienza Aquí</h4>
+        <a href="login.html" class="btn btn-primary btn-nav btn-block"><i class="fas fa-sign-in-alt"></i> Ir a Login</a>
+        <a href="setup.html" class="btn btn-info btn-nav btn-block"><i class="fas fa-database"></i> Cargar Datos de Prueba</a>
+        <p class="text-muted small mt-3"><i class="fas fa-info-circle"></i> Credenciales: <strong>admin@alkewallet.com</strong> / <strong>12345</strong></p>
+      </div>
+    </div>
+
+    <!-- Características -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="mb-3 font-weight-bold"><i class="fas fa-star"></i> Funcionalidades</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-sign-in-alt fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-1">Login</h6>
+                <small class="text-muted">Autenticación segura con jQuery</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-plus-circle fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-1">Depósitos</h6>
+                <small class="text-muted">Agregar dinero a tu cuenta</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-arrow-right-arrow-left fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-1">Transferencias</h6>
+                <small class="text-muted">Envía dinero con validación CBU</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-feat">
+              <div class="card-body text-center">
+                <h5><i class="fas fa-history fa-2x"></i></h5>
+                <h6 class="font-weight-bold mb-1">Historial</h6>
+                <small class="text-muted">Visualiza tus movimientos</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requisitos -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="mb-3 font-weight-bold"><i class="fas fa-check-circle"></i> Requisitos Implementados</h4>
+        <ul class="feature-list">
+          <li><i class="fas fa-check text-success"></i> Selectores jQuery para DOM manipulation</li>
+          <li><i class="fas fa-check text-success"></i> Alertas Bootstrap personalizadas</li>
+          <li><i class="fas fa-check text-success"></i> Validación completa de formularios</li>
+          <li><i class="fas fa-check text-success"></i> LocalStorage para persistencia de datos</li>
+          <li><i class="fas fa-check text-success"></i> Gestión de contactos y CBU validation</li>
+          <li><i class="fas fa-check text-success"></i> Filtrado de transacciones dinámico</li>
+          <li><i class="fas fa-check text-success"></i> Estadísticas en tiempo real</li>
+          <li><i class="fas fa-check text-success"></i> Diseño 100% responsive (mobile/tablet/desktop)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stack Tecnológico -->
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2">
+        <h4 class="mb-3 font-weight-bold"><i class="fas fa-code"></i> Stack Tecnológico</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-feat">
+              <div class="card-body">
+                <h6 class="font-weight-bold mb-2">Frontend</h6>
+                <ul class="small" >
+                  <li><i class="fas fa-check text-primary"></i> HTML5 semántico</li>
+                  <li><i class="fas fa-check text-primary"></i> CSS3 con variables</li>
+                  <li><i class="fas fa-check text-primary"></i> JavaScript ES6+</li>
+                  <li><i class="fas fa-check text-primary"></i> jQuery 3.6.0</li>
+                  <li><i class="fas fa-check text-primary"></i> Bootstrap 4.5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-feat">
+              <div class="card-body">
+                <h6 class="font-weight-bold mb-2">Persistencia</h6>
+                <ul class="small" >
+                  <li><i class="fas fa-check text-success"></i> LocalStorage API</li>
+                  <li><i class="fas fa-check text-success"></i> Serialización JSON</li>
+                  <li><i class="fas fa-check text-success"></i> Validación de datos</li>
+                  <li><i class="fas fa-check text-success"></i> Session management</li>
+                  <li><i class="fas fa-check text-success"></i> 100% cliente (sin backend)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <p class="text-center text-muted small">Mi Billetera Digital v1.0 • Bootstrap + jQuery + LocalStorage</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
